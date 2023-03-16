@@ -6,7 +6,7 @@ const fs = require('fs');
 const datos = JSON.parse(fs.readFileSync('./db.json'));
 
 router.get('/', (req, res) => {
-    res.json(datos);
+    res.status(200).json(datos);
 });
 
 const escribir = (dt) => {
@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
         const id = datos.length + 1
         const newContenido = {...req.body, id};
         datos.push(newContenido);
-        res.json(datos);
+        res.status(200).json(datos);
     }else{
         res.status(500).json('peticion erronea');
     }
@@ -37,7 +37,7 @@ router.delete('/:id', (req, res) => {
             datos.splice(i,1);
         }
     });
-    res.json(datos);
+    res.status(500).json(datos);
 });
 
 router.put('/:id', (req, res) => {
@@ -54,7 +54,7 @@ router.put('/:id', (req, res) => {
                 }
             }
         });
-        res.json(datos);
+        res.status(500).json(datos);
         escribir(datos);
     }else{
         res.status(500).json('Error');
