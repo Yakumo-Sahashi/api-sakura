@@ -1,16 +1,10 @@
 [
     {
         "id": "1",
-        "title": "prueba",
+        "titulo": "prueba",
         "descripcion": "pendiente",
-        "link1": "url",
-        "comenarios":[]
-    },
-    {
-        "id": "2",
-        "title": "prueba2",
-        "descripcion": "pendiente",
-        "link1": "url",
-        "comenarios":[]
+        "enlaces": [],
+        "comenarios":[],
+        "fecha": ""
     }
 ]
